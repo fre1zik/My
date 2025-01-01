@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поисковая система</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Поисковая система</h1>
+                <a href="{{ url_for('faq') }}" class="faq-button">FAQ</a>
+            </div>
+            <p>Пожалуйста, заполните все поля для обнаружения ваших данных в Интернете.</p>
+        </header>
+
+        <form method="POST" onsubmit="showProcessing();">
+            <!-- Поле для ФИО -->
+            <label for="fio">Ваше полное имя:</label>
+            <input type="text" id="fio" name="fio" value="{{ fio }}" placeholder="Введите ваше ФИО" required>
+
+            <!-- Поле для номера телефона -->
+            <label for="phone_number">Номер телефона:</label>
+            <input type="text" id="phone_number" name="phone_number" value="{{ phone_number }}" placeholder="Введите номер телефона" required>
+
+            <!-- Поле для адреса -->
+            <label for="address">Адрес:</label>
+            <input type="text" id="address" name="address" value="{{ address }}" placeholder="Введите адрес" required>
+
+            <!-- Поле для Telegram username -->
+            <label for="telegram_username">Telegram username:</label>
+            <input type="text" id="telegram_username" name="telegram_username" value="{{ telegram_username }}" placeholder="Введите Telegram username" required>
+
+            <!-- Поле для дополнительных данных -->
+            <label for="data">Дополнительные данные:</label>
+            <textarea id="data" name="data" placeholder="Введите дополнительную информацию" rows="4">{{ data }}</textarea>
+
+            <!-- Поле для капчи -->
+            <label for="captcha-input">Введите капчу: <strong>{{ captcha }}</strong></label>
+            <input type="text" id="captcha-input" name="captcha" placeholder="Введите цифры" required>
+
+            <!-- Кнопка "Отправить" -->
+            <button type="submit" id="search-button">Отправить</button>
+        </form>
+
+        <!-- Сообщение об ошибке при некорректных данных -->
+        {% if invalid_input %}
+        <div class="error-box">
+            <p>{{ invalid_input }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Сообщение о введённых данных -->
+        {% if fio and data %}
+        <section class="result">
+            <h2>Ваши данные:</h2>
+            <p><strong>ФИО:</strong> {{ fio }}</p>
+            <p><strong>Номер телефона:</strong> {{ phone_number }}</p>
+            <p><strong>Адрес:</strong> {{ address }}</p>
+            <p><strong>Telegram username:</strong> {{ telegram_username }}</p>
+            <p><strong>Дополнительные данные:</strong> {{ data }}</p>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>

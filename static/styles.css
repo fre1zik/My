@@ -1,0 +1,134 @@
+/* Сброс стилей браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Используем более официальный шрифт */
+    background-color: #f2f4f8; /* Светло-серый фон для страницы */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #e0e0e0;
+}
+
+h1 {
+    color: #2c3e50; /* Темно-синий для заголовка */
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d8e0;
+    border-radius: 6px;
+    font-size: 1.1em;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db; /* Синий цвет для фокуса */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+input[type="text"]::placeholder {
+    color: #b2bec3; /* Серый цвет для плейсхолдера */
+}
+
+input[name="captcha"] {
+    font-size: 1.1em;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d8e0;
+    background-color: #fafafa;
+}
+
+input[name="captcha"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+button {
+    padding: 12px;
+    background-color: #3498db; /* Основной синий цвет */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для кнопки */
+}
+
+button:hover {
+    background-color: #2980b9; /* Темнее синий при наведении */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #34495e; /* Темный цвет для текста меток */
+}
+
+p {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+strong {
+    color: #2c3e50;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Добавляем акцент на новые поля */
+input[name="telegram_username"] {
+    font-size: 1.1em;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #d1d8e0;
+    background-color: #fafafa;
+}
+
+input[name="telegram_username"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}

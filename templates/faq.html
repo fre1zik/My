@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Часто задаваемые вопросы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Часто задаваемые вопросы (FAQ)</h1>
+                <a href="{{ url_for('index') }}" class="back-button">Назад</a>
+            </div>
+            <p>Ниже приведены ответы на самые распространенные вопросы.</p>
+        </header>
+
+        <section class="faq-section">
+            <div class="faq-item">
+                <h2>Вопрос 1: Как работает поисковая система?</h2>
+                <p>Ответ: Наша поисковая система анализирует введенные данные и предоставляет результаты на основе доступной информации в Интернете.</p>
+            </div>
+
+            <div class="faq-item">
+                <h2>Вопрос 2: Как защитить свои данные?</h2>
+                <p>Ответ: Мы используем современные методы защиты данных, включая шифрование и безопасное хранение информации.</p>
+            </div>
+
+            <div class="faq-item">
+                <h2>Вопрос 3: Что делать, если капча не работает?</h2>
+                <p>Ответ: Если вы столкнулись с проблемой ввода капчи, попробуйте обновить страницу и ввести капчу снова. Если проблема сохраняется, свяжитесь с нашей службой поддержки.</p>
+            </div>
+
+            <!-- Добавьте дополнительные вопросы и ответы по необходимости -->
+        </section>
+    </div>
+</body>
+</html>
